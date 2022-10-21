@@ -7,7 +7,7 @@ services:
         - UID=${UID}
         - USERNAME=${USER_NAME}
         - GID=${GID}
-    image: tf-gpu
+    image: torch-gpu
     container_name: $USER_NAME-$nCPU-CPU-GPU$GPU
     volumes:
       - ./work:/home/$USER_NAME/work # workをワーキングディレクトリとしてマウント
