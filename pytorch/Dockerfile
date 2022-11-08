@@ -1,7 +1,5 @@
 
-# imageファイルはNGCカタログ(https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch)のtagsから選んだ
-FROM nvcr.io/nvidia/pytorch:22.09-py3
-LABEL mainteainer="giura"
+FROM nvidia/cuda:11.7.1-runtime-ubuntu20.04
 LABEL version="0.1"
 ENV TZ Asia/Tokyo
 ENV DEBIAN_FRONTEND=noninteractive
@@ -32,11 +30,11 @@ RUN pip3 install -U pip
 RUN pip3 install --timeout 100 -r requirements.txt
 
 # matplotlibのfontsに日本語フォントを追加
-# RUN curl -L  "https://moji.or.jp/wp-content/ipafont/IPAexfont/IPAexfont00401.zip" > font.zip
-# RUN unzip font.zip
-# RUN cp ./IPAexfont00401/ipaexg.ttf /usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data/fonts/ttf/ipaexg.ttf
-# RUN chmod 744 /usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data/fonts/ttf/ipaexg.ttf
-# RUN echo "font.family : IPAexGothic" >>  /usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data/matplotlibrc
+RUN curl -L  "https://moji.or.jp/wp-content/ipafont/IPAexfont/IPAexfont00401.zip" > font.zip
+RUN unzip font.zip
+RUN cp ./IPAexfont00401/ipaexg.ttf /usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data/fonts/ttf/ipaexg.ttf
+RUN chmod 744 /usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data/fonts/ttf/ipaexg.ttf
+RUN echo "font.family : IPAexGothic" >>  /usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data/matplotlibrc
 RUN rm -rf ~/.cache/pip
 
 # docker-compose.ymlで設定した環境変数を導入
