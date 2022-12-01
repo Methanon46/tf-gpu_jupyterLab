@@ -1,3 +1,4 @@
+setuptools
 torch
 torchvision
 torchaudio
@@ -15,3 +16,11 @@ python-dotenv
 comet_ml
 torchinfo
 timm
+tensorflow 
+tf-models-official 
+tf_slim 
+tensorflow_datasets 
+tensorflow-hub 
+keras 
+keras-tuner 
+keras-visualizer

@@ -29,6 +29,9 @@ COPY requirements.txt ${PWD}
 # pythonのパッケージをインストール
 RUN pip3 install -U pip
 RUN pip3 install --timeout 100 -r requirements.txt
+RUN pip3 install git+https://github.com/tensorflow/docs
+RUN pip3 install git+https://github.com/tensorflow/examples.git
+RUN pip3 install git+https://www.github.com/keras-team/keras-contrib.git
 
 # matplotlibのfontsに日本語フォントを追加
 RUN curl -L  "https://moji.or.jp/wp-content/ipafont/IPAexfont/IPAexfont00401.zip" > font.zip
