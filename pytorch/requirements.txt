@@ -7,3 +7,6 @@ scikit-learn
 seaborn
 statsmodels
 japanize_matplotlib
+albumentations
+opencv-contrib-python
+PyYAML
