@@ -7,6 +7,11 @@ scikit-learn
 seaborn
 statsmodels
 japanize_matplotlib
+opencv-python
 albumentations
 opencv-contrib-python
 PyYAML
+python-dotenv
+comet_ml
+torchinfo
+timm
