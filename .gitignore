@@ -1,5 +1,6 @@
 work/*
 !/.gitkeep
 *.zip
+pytorch/.env
 pytorch/work/*
 !pytorch/work/.gitkeep
